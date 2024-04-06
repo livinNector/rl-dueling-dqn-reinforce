@@ -6,7 +6,7 @@ import torch.optim as optim
 import numpy as np
 from memory import ReplayMemory
 from action_selection import DecayingParam, DecayingSoftmax
-from utils import train
+from train_utils import train
 
 device = torch.device("cuda:0" if torch.cuda.is_available() else "cpu")
 print("device:", device)

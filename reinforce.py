@@ -5,7 +5,7 @@ import torch.optim as optim
 from torch.distributions import Categorical
 
 import numpy as np
-from utils import train
+from train_utils import train
 from collections import deque
 
 device = torch.device("cuda:0" if torch.cuda.is_available() else "cpu")
