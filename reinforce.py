@@ -102,7 +102,7 @@ class ReinforceAgent:
         self.log_probs = []
 
     def train(
-        self, env, n_episodes=1000, max_t=1000, reward_window=100, reward_threshold=None
+        self, env, n_episodes=1000, max_t=1000, reward_window=100, reward_threshold=None,verbose=False,plot=False
     ):
         """Returns the rewards"""
         return train(
@@ -114,4 +114,6 @@ class ReinforceAgent:
             max_t=max_t,
             reward_window=reward_window,
             reward_threshold=reward_threshold,
+            verbose=verbose,
+            plot=plot
         )

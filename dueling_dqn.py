@@ -5,6 +5,7 @@ import torch.optim as optim
 
 import numpy as np
 from memory import ReplayMemory
+from action_selection import DecayingParam, DecayingSoftmax
 from utils import train
 
 device = torch.device("cuda:0" if torch.cuda.is_available() else "cpu")
@@ -169,6 +170,8 @@ class DuelingDQNAgent:
         max_t: int = 1000,
         reward_window: int = 100,
         reward_threshold: int | None = None,
+        verbose=False,
+        plot=False
     ):
         self.action_selector.reset()
         return train(
@@ -179,4 +182,6 @@ class DuelingDQNAgent:
             max_t=max_t,
             reward_window=reward_window,
             reward_threshold=reward_threshold,
+            verbose=verbose,
+            plot=plot
         )
